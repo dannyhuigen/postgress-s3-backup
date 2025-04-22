@@ -1,12 +1,12 @@
 # postgress-s3-backup
 
-## A simple postgres dumper and uploader to S3
+ simple tool to dump a PostgreSQL database and upload the backup to S3.
 
-- Secrets are read from files for security.
-- Schedule is fully configurable.
-- Old backups are deleted from S3 after the specified number of days.
+- Reads secrets from files for security.
+- Fully configurable backup schedule.
+- Automatically deletes old backups from S3 after a specified number of days.
 
-Example docker swarm:
+Example: Docker Swarm Deployment
 ```yaml
 
 services:
@@ -16,7 +16,7 @@ services:
       SCHEDULE: '0 0 4 * * *'
       BACKUP_KEEP_DAYS: 7
       S3_REGION: eu-central-1
-      S3_BUCKET: primni-backup
+      S3_BUCKET: backup-bucket
       S3_PREFIX: backup
       POSTGRES_HOST: postgres
       POSTGRES_DATABASE: db
