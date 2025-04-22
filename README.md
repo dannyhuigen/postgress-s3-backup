@@ -11,7 +11,7 @@ Example docker swarm:
 
 services:
   pg_backup:
-    build: ./path-to-backup-dockerfile
+    image: dannyhuigen1/postgress-s3-backup:latest
     environment:
       SCHEDULE: '0 0 4 * * *'
       BACKUP_KEEP_DAYS: 7
